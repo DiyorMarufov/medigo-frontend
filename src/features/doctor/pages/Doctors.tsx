@@ -28,7 +28,7 @@ const Doctors = () => {
           <div className="w-[320px] h-[40px] border border-[#D0D5DD] rounded-md flex justify-between pr-3">
             <Input
               placeholder="Qidirish"
-              className="!border-none !outline-none !ring-0 focus:!outline-none focus:!ring-0 !pt-[4px]"
+              className="!border-none !outline-none !ring-0 focus:!outline-none focus:!ring-0 !pt-[4px] placeholder:text-[16px]! placeholder:text-[#667085]!"
             />
             <div className="flex items-center">
               <img src={search} alt="" />

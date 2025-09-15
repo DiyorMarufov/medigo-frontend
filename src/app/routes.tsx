@@ -1,5 +1,8 @@
 import { lazy } from "react";
 import { useRoutes } from "react-router-dom";
+const DoctorDetails = lazy(
+  () => import("../features/doctor/pages/doctor-detail/DoctorDetails")
+);
 const Applications = lazy(
   () => import("../features/application/pages/Applications")
 );
@@ -18,6 +21,7 @@ export const AppRouter = () => {
       children: [
         { index: true, element: <Statistic /> },
         { path: "doctors", element: <Doctors /> },
+        { path: "doctors/:id", element: <DoctorDetails /> },
         { path: "applications", element: <Applications /> },
         { path: "patients", element: <Patient /> },
         { path: "admins", element: <Admin /> },
