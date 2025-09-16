@@ -1,5 +1,7 @@
 import { lazy } from "react";
 import { useRoutes } from "react-router-dom";
+import Login from "../features/login/login";
+import Auth from "../features/auth/Auth";
 const DoctorDetails = lazy(
   () => import("../features/doctor/pages/doctor-detail/DoctorDetails")
 );
@@ -16,16 +18,27 @@ const Doctors = lazy(() => import("../features/doctor/pages/Doctors"));
 export const AppRouter = () => {
   const routes = useRoutes([
     {
+      path: "/login",
+      element: <Login />,
+    },
+
+    {
       path: "/",
-      element: <DashboardLayout />,
+      element: <Auth />,
       children: [
-        { index: true, element: <Statistic /> },
-        { path: "doctors", element: <Doctors /> },
-        { path: "doctors/:id", element: <DoctorDetails /> },
-        { path: "applications", element: <Applications /> },
-        { path: "patients", element: <Patient /> },
-        { path: "admins", element: <Admin /> },
-        { path: "settings", element: <Settings /> },
+        {
+          path: "/",
+          element: <DashboardLayout />,
+          children: [
+            { index: true, element: <Statistic /> },
+            { path: "doctors", element: <Doctors /> },
+            { path: "doctors/:id", element: <DoctorDetails /> },
+            { path: "applications", element: <Applications /> },
+            { path: "patients", element: <Patient /> },
+            { path: "admins", element: <Admin /> },
+            { path: "settings", element: <Settings /> },
+          ],
+        },
       ],
     },
   ]);

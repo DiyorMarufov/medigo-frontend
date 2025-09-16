@@ -8,7 +8,6 @@ import filter from "../../../shared/assets/main/filter.svg";
 const Doctors = () => {
   const { getDoctors } = useDoctor();
   const { data } = getDoctors();
-
   return (
     <div className="">
       <div className="flex justify-between pb-7">
@@ -43,7 +42,7 @@ const Doctors = () => {
           </div>
         </div>
       </div>
-      <DoctorView data={data?.data} />
+      <DoctorView data={data?.data?.data} />
     </div>
   );
 };
