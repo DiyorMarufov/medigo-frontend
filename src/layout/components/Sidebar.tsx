@@ -9,7 +9,7 @@ import logout from "../../shared/assets/sidebar/logout.svg";
 
 const Sidebar = () => {
   return (
-    <div className="w-[276px] h-screen bg-[#FCFCFD] shadow-xl rounded-md sticky top-0 left-0 p-4 text-white">
+    <div className="w-[276px] h-[86vh] bg-[#FCFCFD] shadow-xl rounded-md sticky top-0 left-0 p-4 text-white">
       <div className="flex justify-center mt-3">
         <img src={logo} alt="" />
       </div>
