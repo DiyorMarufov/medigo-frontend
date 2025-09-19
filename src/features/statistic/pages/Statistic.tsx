@@ -39,9 +39,10 @@ const Statistic = () => {
 
       <div className="flex flex-col gap-6 mt-6">
         <div className="rounded-2xl shadow-md bg-white p-5 flex flex-col">
-          <h2 className="text-lg font-semibold mb-2">📈 Oylik trend</h2>
-          <div className="w-[1400px] flex justify-center">
-            <div className="">
+          <h2 className="text-lg font-semibold mb-2 text-center">📈 Oylik trend</h2>
+          <div className="w-full flex justify-center items-center">
+            <div className="w-[800px]">
+              {" "}
               <LineChart />
             </div>
           </div>

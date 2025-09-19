@@ -28,27 +28,27 @@ const LineChart = () => {
   });
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=7")
+    fetch("https://dummyjson.com/users?limit=7")
       .then((res) => res.json())
       .then((data) => {
-        const labels = data.products.map((p: any) => p.title);
-        const prices = data.products.map((p: any) => p.price); 
-        const stocks = data.products.map((p: any) => p.stock);
+        const labels = data.users.map((u: any) => u.firstName);
+        const ages = data.users.map((u: any) => u.age); 
+        const heights = data.users.map((u: any) => u.height);
 
         setChartData({
           labels,
           datasets: [
             {
-              label: "Narx ($)",
-              data: prices,
-              borderColor: "rgb(255, 99, 132)",
-              backgroundColor: "rgba(255, 99, 132, 0.5)",
+              label: "Yosh",
+              data: ages,
+              borderColor: "rgb(255, 159, 64)",
+              backgroundColor: "rgba(255, 159, 64, 0.5)",
             },
             {
-              label: "Skladdagi soni",
-              data: stocks,
-              borderColor: "rgb(53, 162, 235)",
-              backgroundColor: "rgba(53, 162, 235, 0.5)",
+              label: "Balandlik (sm)",
+              data: heights,
+              borderColor: "rgb(75, 192, 192)",
+              backgroundColor: "rgba(75, 192, 192, 0.5)",
             },
           ],
         });
@@ -59,7 +59,7 @@ const LineChart = () => {
     responsive: true,
     plugins: {
       legend: { position: "top" as const },
-      title: { display: true, text: "📈 Product Statistikasi" },
+      title: { display: true, text: "👤 Foydalanuvchilar statistikasi" },
     },
   };
 
