@@ -5,17 +5,21 @@ import Header from "./components/Header";
 
 const DashboardLayout = () => {
   return (
-    <>
-      <Header />
-      <div className="flex bg-[#FCFCFD]">
-        <div className="px-6 pt-[38px] pb-[24px]">
+    <div className="h-screen flex flex-col">
+      <header className="sticky top-0 z-50 w-full">
+        <Header />
+      </header>
+
+      <div className="flex flex-1 bg-[#FCFCFD] overflow-hidden">
+        <aside className="px-6 pt-[38px] pb-[24px] bg-white">
           <Sidebar />
-        </div>
-        <main className="flex-1 pl-3 pr-9 py-[38px]">
+        </aside>
+
+        <main className="flex-1 pl-3 pr-9 py-[38px] overflow-y-auto">
           <Outlet />
         </main>
       </div>
-    </>
+    </div>
   );
 };
 
